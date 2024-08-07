@@ -73,7 +73,7 @@
         <a class="navbar-brand navbar-brand-center d-flex align-items-center p-0 only-mobile" href="/">
             <img src="img/logo.png" alt="">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button id="dlDropdown" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="lnr lnr-menu"></span>
         </button>
 
@@ -86,20 +86,17 @@
                 </li>
                 <div class="d-flex flex-lg-row flex-column">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#navbarSupportedContent">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#gtco-welcome">About</a>
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gtco-special-dishes">
                           Special Dishes
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="#gtco-special-dishes">Nova Lox Bagel</a>
-                          <a class="dropdown-item" href="#gtco-special-dishes2">Vietnamese Coffee</a>
-                        </div>
+                    
                     </li>
                 </div>
             </ul>
@@ -1640,5 +1637,23 @@
 
 	<!-- Main JS -->
 	<script src="js/app.min.js "></script>
+   <script>
+    $(document).ready(function() {
+        // Function to hide the dropdown
+        function hideDropdown() {
+            $("#navbarSupportedContent").collapse('hide');
+        }
+
+        // Click handler for all nav links except those inside the Special Dishes dropdown
+        $("a.nav-link").not("#navbarDropdown, #navbarDropdown ~ .dropdown-menu a").click(function() {
+            hideDropdown();
+        });
+
+        // Special Dishes dropdown handling
+        $("#navbarDropdown, #navbarDropdown ~ .dropdown-menu a").click(function(e) {
+            e.stopPropagation(); // Prevent the event from bubbling up
+        });
+    });
+</script>
 </body>
 </html>
