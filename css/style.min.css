@@ -85,6 +85,16 @@ a:hover {
 .nav-link {
   color: #000; }
 
+#side-nav-open{
+    display: none;
+  }
+
+@media (max-width: 992px) {
+.dash-desktop{
+  display: none;
+}
+}
+
 #navbar-header {
   height: 100px; }
   #navbar-header .navbar-nav .dropdown-menu {
@@ -95,7 +105,8 @@ a:hover {
 
 @media (min-width: 1024px) {
   #navbar-header .navbar-nav {
-    width: 50%; }
+    width: 50%;
+   }
   #navbar-header .dropdown .dropdown-menu {
     display: block;
     opacity: 0;
