@@ -228,7 +228,8 @@ a:hover {
     width: calc(100% - 95px);
     margin-left: 15px; }
     .menus .text-wrap h4 {
-      font-weight: 300; }
+      font-weight: 300;
+      font-size:18px; }
 
 /*=====  End of MENU  ======*/
 /*=================================
@@ -511,5 +512,24 @@ a:hover {
     height: 90px; }
   .img-2 {
     height: 500px; } }
+
+    #scrollToTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #cfd58d; /* Change to your preferred color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            display: none; /* Hidden by default */
+        }
+
+        /* Show the button when scrolling down */
+        #scrollToTopBtn.show {
+            display: block;
+        }
 
 /*=====  End of RESPONSIVE  ======*/
